@@ -9,6 +9,9 @@ $(call inherit-product, device/xiaomi/raphael/device.mk)
 # Inherit some common Awaken stuff.
 $(call inherit-product, vendor/awaken/config/common.mk)
 
+# Inherit PSU
+$(call inherit-product-if-exists, vendor/prebuilts/config/apex.mk)
+
 # Device identifier. This must come after all inclusions.
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := raphael

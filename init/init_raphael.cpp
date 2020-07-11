@@ -93,4 +93,5 @@ void vendor_load_properties() {
 
     property_override("ro.build.fingerprint", "google/coral/coral:11/RP1A.201105.002/6869500:user/release-keys");
     load_dalvik_properties();
+    property_override("ro.apex.updatable", "true");
 }
