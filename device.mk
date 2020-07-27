@@ -59,10 +59,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_USES_QCOM_HARDWARE := true
 PRODUCT_BOARD_PLATFORM := msmnile
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
 # Device-specific settings
 PRODUCT_PACKAGES += \
     XiaomiParts
@@ -115,6 +111,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/keylayout/sm8150-tavil-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sm8150-tavil-snd-card_Button_Jack.kl
+
+# Prebuilt Packages
+PRODUCT_PACKAGES += \
+    GCamGo
 
 # Media
 PRODUCT_COPY_FILES += \
