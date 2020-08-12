@@ -18,13 +18,13 @@
 #include <android-base/properties.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+#include <sys/sysinfo.h>
 
 #include "vendor_init.h"
 
 using ::android::base::SetProperty;
 
-void property_override(char const prop[], char const value[])
-{
+void property_override(char const prop[], char const value[]) {
     prop_info *pi;
 
     pi = (prop_info*) __system_property_find(prop);
@@ -33,6 +33,29 @@ void property_override(char const prop[], char const value[])
     else
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
+
+void load_dalvik_properties() {
+    struct sysinfo sys;
+
+    sysinfo(&sys);
+    if (sys.totalram < 6144ull * 1024 * 1024) {
+        // from - phone-xhdpi-6144-dalvik-heap.mk
+        property_override("dalvik.vm.heapstartsize", "16m");
+        property_override("dalvik.vm.heapgrowthlimit", "256m");
+        property_override("dalvik.vm.heapsize", "512m");
+        property_override("dalvik.vm.heapmaxfree", "32m");
+    } else {
+        // 8GB & 12GB RAM
+        property_override("dalvik.vm.heapstartsize", "32m");
+        property_override("dalvik.vm.heapgrowthlimit", "512m");
+        property_override("dalvik.vm.heapsize", "768m");
+        property_override("dalvik.vm.heapmaxfree", "64m");
+    }
+
+    property_override("dalvik.vm.heaptargetutilization", "0.5");
+    property_override("dalvik.vm.heapminfree", "8m");
+}
+
 void load_raphaelglobal() {
     property_override("ro.product.model", "Mi 9T Pro");
     property_override("ro.build.product", "raphael");
@@ -67,5 +90,7 @@ void vendor_load_properties() {
     } else {
         LOG(ERROR) << __func__ << ": unexcepted region!";
     }
+
     property_override("ro.build.fingerprint", "google/coral/coral:11/RP1A.201005.004/6782484:user/release-keys");
+    load_dalvik_properties();
 }
