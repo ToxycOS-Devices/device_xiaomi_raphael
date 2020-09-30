@@ -1,4 +1,5 @@
-// Copyright (C) 2019 The LineageOS Project
+//
+// Copyright (C) 2019-2020 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -13,19 +14,23 @@
 // limitations under the License.
 
 cc_binary {
-    relative_install_path: "hw",
+    name: "vendor.lineage.livedisplay@2.0-service.raphael",
+    vintf_fragments: ["vendor.lineage.livedisplay@2.0-service.raphael.xml"],
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.raphael.rc"],
     defaults: ["hidl_defaults"],
-    name: "android.hardware.light@2.0-service.raphael",
-    vintf_fragments: ["android.hardware.light@2.0-service.raphael.xml"],
-    init_rc: ["android.hardware.light@2.0-service.raphael.rc"],
-    srcs: ["service.cpp", "Light.cpp"],
+    relative_install_path: "hw",
+    srcs: [
+        "AntiFlicker.cpp",
+        "SunlightEnhancement.cpp",
+        "service.cpp",
+    ],
     vendor: true,
     shared_libs: [
-        "android.hardware.light@2.0",
         "libbase",
-        "libhardware",
+        "libbinder",
         "libhidlbase",
-        "liblog",
+        "libhidltransport",
         "libutils",
+        "vendor.lineage.livedisplay@2.0",
     ],
 }
