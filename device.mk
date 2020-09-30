@@ -33,7 +33,6 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/pixel \
     hardware/google/interfaces \
-    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth
 
 # Hardware
 PRODUCT_COPY_FILES += \
