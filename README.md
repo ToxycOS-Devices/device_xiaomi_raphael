@@ -5,7 +5,7 @@ Device configuration for Xiaomi Mi 9T Pro / Redmi K20 Pro
 
 The Xiaomi Mi 9T Pro / Redmi K20 Pro (codenamed _"raphael"_) is a high-end smartphone from Xiaomi.
 
-It was announced and released in August 2019.
+Redmi K20 Pro and Mi 9T Pro was announced and released in May and August 2019 respectively. Both are basically same devices with different name for different regions.
 
 ## Device specifications
 
