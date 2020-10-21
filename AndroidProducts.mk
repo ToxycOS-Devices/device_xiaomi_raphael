@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/awaken_raphael.mk
+    $(LOCAL_DIR)/toxyc_raphael.mk
 
 COMMON_LUNCH_CHOICES := \
-    awaken_raphael-user \
-    awaken_raphael-userdebug \
-    awaken_raphael-eng
+    toxyc_raphael-user \
+    toxyc_raphael-userdebug \
+    toxyc_raphael-eng
