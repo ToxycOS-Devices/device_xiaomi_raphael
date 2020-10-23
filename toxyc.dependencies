@@ -1,0 +1,35 @@
+[
+    {
+        "remote":       "github",
+        "repository":   "ejbtrd/android_hardware_qcom-caf_sm8150_audio",
+        "target_path":  "hardware/qcom-caf/sm8150/audio",
+        "override":     "hardware_qcom-caf_sm8150_audio",
+        "revision":     "11"
+    },
+    {
+        "remote":       "github",
+        "repository":   "ejbtrd/android_hardware_qcom-caf_sm8150_display",
+        "target_path":  "hardware/qcom-caf/sm8150/display",
+        "override":     "hardware_qcom-caf_sm8150_display",
+        "revision":     "11"
+    },
+    {
+        "remote":       "github",
+        "repository":   "ejbtrd/android_hardware_qcom-caf_sm8150_media",
+        "target_path":  "hardware/qcom-caf/sm8150/media",
+        "override":     "hardware_qcom-caf_sm8150_media",
+        "revision":     "11"
+    },
+    {
+        "remote":       "github",
+        "repository":   "LineageOS/android_hardware_xiaomi",
+        "target_path":  "hardware/xiaomi",
+        "revision":     "lineage-18.0"
+    },
+    {
+        "remote":       "github",
+        "repository":   "LineageOS/android_packages_resources_devicesettings",
+        "target_path":  "packages/resources/devicesettings",
+        "revision":     "lineage-18.0"
+    }
+]
