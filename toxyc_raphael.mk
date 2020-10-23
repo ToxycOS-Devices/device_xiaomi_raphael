@@ -6,8 +6,8 @@
 
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common Awaken stuff.
-$(call inherit-product, vendor/awaken/config/common.mk)
+# Inherit some common Toxyc stuff.
+$(call inherit-product, vendor/toxyc/config/common.mk)
 
 # Inherit PSU
 $(call inherit-product-if-exists, vendor/prebuilts/config/apex.mk)
@@ -16,12 +16,10 @@ $(call inherit-product-if-exists, vendor/prebuilts/config/apex.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := raphael
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := awaken_raphael
-
-BUILD_FINGERPRINT := "Xiaomi/raphaelin/raphaelin:9/PKQ1.181121.001/V10.3.3.0.PFKINXM:user/release-keys"
+PRODUCT_NAME := toxyc_raphael
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-AWAKEN_BUILD_TYPE := OFFICIAL
-
 IS_PHONE := true
+
+TARGET_BOOT_ANIMATION_RES := 1080
+TOXYC_OFFICIAL := true
