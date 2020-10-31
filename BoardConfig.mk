@@ -142,7 +142,7 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 DISABLE_RILD_OEM_HOOK := true
 
 # Sepolicy
-include device/qcom/sepolicy/SEPolicy.mk
+include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # Power
